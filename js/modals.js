@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const modalFiles = [
-        'cabin.html',
-        'cake.html',
-        'circus.html',
-        'game.html',
+        'news.html',
+        'ssc.html',
+        'cms.html',
+        'lms.html',
         'safe.html',
         'submarine.html'
     ];

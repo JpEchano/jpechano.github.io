@@ -1,17 +1,15 @@
-/* Custom Modal Styles - Full Screen with Scrollable Content */
-
-/* Make modal dialog full screen */
+/* Make modal dialog full screen and centered */
 .portfolio-modal .modal-dialog {
-    max-width: 50vw !important;
-    margin: 0 !important;
-    height: 100vh !important;
+    max-width: 60dvw !important;
+    margin: 5dvh auto !important;
+    height: 90dvh !important;
 }
 
 /* Make modal content fill the entire viewport */
 .portfolio-modal .modal-content {
-    height: 100vh !important;
+    height: 90dvh !important;
     border: none !important;
-    border-radius: 0 !important;
+    border-radius: 10px !important;
     display: flex !important;
     flex-direction: column !important;
 }
@@ -37,8 +35,32 @@
     scroll-behavior: smooth;
 }
 
-/* Optional: Add padding to prevent content from touching edges on mobile */
+/* Hide scrollbar for Chrome, Safari and Opera */
+.portfolio-modal .modal-body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.portfolio-modal .modal-body {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Mobile view: Full screen modals */
 @media (max-width: 768px) {
+    .portfolio-modal .modal-dialog {
+        max-width: 100dvw !important;
+        height: 100dvh !important;
+        margin: 0 !important;
+    }
+
+    .portfolio-modal .modal-content {
+        height: 100dvh !important;
+        border-radius: 0 !important;
+    }
+
     .portfolio-modal .modal-body {
         padding: 1.5rem !important;
     }
