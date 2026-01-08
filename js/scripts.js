@@ -62,7 +62,7 @@ window.addEventListener('DOMContentLoaded', event => {
                     const target = entry.target;
                     // Sections with white backgrounds: About (no bg class), Skills (no bg class), Contact (no bg class)
                     // Sections with teal backgrounds: Masthead (bg-primary), Experience (bg-primary), Portfolio (bg-primary)
-                    const isWhiteSection = !target.classList.contains('bg-primary');
+                    const isWhiteSection = !target.classList.contains('bg-primary') && !target.classList.contains('bg-primary-1');
 
                     if (isWhiteSection) {
                         mainNavElement.classList.add('navbar-light-mode');
@@ -103,6 +103,12 @@ window.addEventListener('DOMContentLoaded', event => {
             el.classList.add('scroll-reveal');
             revealObserver.observe(el);
         });
+
+        // Update copyright year
+        const yearElement = document.querySelector('#copyright-year');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
     };
 
     // Wait for sections to be loaded before initializing
