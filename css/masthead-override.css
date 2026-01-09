@@ -1,0 +1,229 @@
+/* Masthead Override Styles for .bg-primary-1 background */
+/* This file overrides the white background in styles.css and ensures blue shows */
+
+.masthead {
+    padding-top: calc(6rem + 74px);
+    padding-bottom: 6rem;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    /* Explicitly set blue background to override white from styles.css */
+    background: #4880ff !important;
+    background-color: #4880ff !important;
+    /* Remove the dark text color override */
+    color: #fff !important;
+}
+
+.masthead-content {
+    z-index: 10;
+}
+
+.masthead-heading {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff !important;
+}
+
+.masthead-subheading {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8) !important;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.text-highlight {
+    color: #fff !important;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.masthead-actions .btn-xl {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.masthead-actions .btn-primary {
+    background-color: #fff !important;
+    border-color: #fff !important;
+    color: #4880ff !important;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.masthead-actions .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.3);
+}
+
+.masthead-actions .btn-outline-light {
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.masthead-actions .btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: #fff !important;
+    color: #fff !important;
+    transform: translateY(-3px);
+}
+
+.masthead-stats {
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding-top: 2rem;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff !important;
+    margin-bottom: 0;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7) !important;
+    line-height: 1.2;
+}
+
+/* Hero Image & Floating Tags */
+.hero-image-container {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+}
+
+.hero-img {
+    max-width: 90%;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+    animation: floatImage 6s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.floating-tag {
+    position: absolute;
+    background: #fff;
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+    animation: floatTag 4s ease-in-out infinite;
+}
+
+.tag-icon {
+    width: 32px;
+    height: 32px;
+    background: #eef3ff;
+    color: #4880ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.floating-tag span {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #191f2d;
+}
+
+.tag-1 {
+    top: 15%;
+    right: -5%;
+    animation-delay: 0s;
+}
+
+.tag-2 {
+    top: 45%;
+    right: -15%;
+    animation-delay: 1s;
+}
+
+.tag-3 {
+    bottom: 20%;
+    right: -5%;
+    animation-delay: 2s;
+}
+
+@keyframes floatTag {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-10px) translateX(5px);
+    }
+}
+
+/* Background Decorations */
+.bg-circle-1 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.bg-circle-2 {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .masthead {
+        text-align: center;
+        padding-top: 8rem;
+    }
+
+    .masthead-heading {
+        font-size: 2.5rem;
+    }
+
+    .masthead-subheading {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .masthead-stats {
+        justify-content: center;
+    }
+
+    .stat-item {
+        margin-right: 2rem !important;
+    }
+
+    .stat-item:last-child {
+        margin-right: 0 !important;
+    }
+}
