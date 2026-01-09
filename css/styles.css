@@ -13097,12 +13097,12 @@ html {
   }
 
   .masthead .masthead-heading {
-    font-size: 5rem;
-    line-height: 4.5rem;
+    font-size: 1.75rem;
+    line-height: 2rem;
   }
 
   .masthead .masthead-subheading {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -13449,4 +13449,229 @@ html {
 
 .copyright {
   background-color: #1a252f;
+}
+
+/* Redesigned Masthead Styles */
+.masthead {
+  padding-top: calc(6rem + 74px);
+  padding-bottom: 6rem;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 70% 30%, rgba(72, 128, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 90% 70%, rgba(111, 66, 193, 0.1) 0%, transparent 40%),
+    #fff !important;
+  color: #212529 !important;
+}
+
+.masthead-content {
+  z-index: 10;
+}
+
+.masthead-heading {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #191f2d;
+}
+
+.masthead-subheading {
+  font-size: 1.2rem;
+  color: #6c757d;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.text-highlight {
+  color: #4880ff;
+  font-weight: 700;
+}
+
+.masthead-actions .btn-xl {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.masthead-actions .btn-primary {
+  background-color: #4880ff;
+  border-color: #4880ff;
+  box-shadow: 0 10px 20px rgba(72, 128, 255, 0.2);
+}
+
+.masthead-actions .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(72, 128, 255, 0.3);
+}
+
+.masthead-actions .btn-outline-light {
+  color: #191f2d;
+  border-color: #dee2e6;
+}
+
+.masthead-actions .btn-outline-light:hover {
+  background-color: #f8f9fa;
+  border-color: #ced4da;
+  color: #191f2d;
+  transform: translateY(-3px);
+}
+
+.masthead-stats {
+  border-top: 1px solid #eee;
+  padding-top: 2rem;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #191f2d;
+  margin-bottom: 0;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+  line-height: 1.2;
+}
+
+/* Hero Image & Floating Tags */
+.hero-image-container {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+.hero-img {
+  max-width: 90%;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.floating-tag {
+  position: absolute;
+  background: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+  animation: floatTag 4s ease-in-out infinite;
+}
+
+.tag-icon {
+  width: 32px;
+  height: 32px;
+  background: #eef3ff;
+  color: #4880ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 0.9rem;
+}
+
+.floating-tag span {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #191f2d;
+}
+
+.tag-1 {
+  top: 15%;
+  right: -5%;
+  animation-delay: 0s;
+}
+
+.tag-2 {
+  top: 45%;
+  right: -15%;
+  animation-delay: 1s;
+}
+
+.tag-3 {
+  bottom: 20%;
+  right: -5%;
+  animation-delay: 2s;
+}
+
+@keyframes floatTag {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+
+  50% {
+    transform: translateY(-10px) translateX(5px);
+  }
+}
+
+/* Background Decorations */
+.bg-circle-1 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(72, 128, 255, 0.1);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.bg-circle-2 {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border: 1px solid rgba(72, 128, 255, 0.05);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+  .masthead {
+    text-align: center;
+    padding-top: 8rem;
+  }
+
+  .masthead-heading {
+    font-size: 2.5rem;
+  }
+
+  .masthead-subheading {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .masthead-stats {
+    justify-content: center;
+  }
+
+  .stat-item {
+    margin-right: 2rem !important;
+  }
+
+  .stat-item:last-child {
+    margin-right: 0 !important;
+  }
 }
