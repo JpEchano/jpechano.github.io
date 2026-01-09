@@ -13414,8 +13414,23 @@ html {
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid #edf2f7;
-  display: flex;
-  justify-content: center;
+}
+
+.modal-footer-actions .btn.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: #e2e8f0 !important;
+  border-color: #e2e8f0 !important;
+  color: #718096 !important;
+  pointer-events: none;
+}
+
+.modal-footer-actions p.small {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.7rem;
+  color: #a0aec0 !important;
 }
 
 @media (max-width: 767.98px) {
