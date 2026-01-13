@@ -14,31 +14,60 @@
             <div class="col-lg-8 col-xl-7">
                 <form id="contactForm">
                     <!-- Name input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..."
-                            required />
-                        <label for="name">Full name</label>
+                    <div class="form-floating-custom mb-3">
+                        <div class="custom-input-group">
+                            <input class="form-control custom-input" id="name" name="name" type="text"
+                                placeholder="Enter your name..." required />
+                            <label for="name" class="floating-label">Full name</label>
+                        </div>
                         <div class="invalid-feedback">A name is required.</div>
                     </div>
                     <!-- Email address input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com"
-                            required />
-                        <label for="email">Email address</label>
+                    <div class="form-floating-custom mb-3">
+                        <div class="custom-input-group">
+                            <input class="form-control custom-input" id="email" name="email" type="email"
+                                placeholder="name@example.com" required />
+                            <label for="email" class="floating-label">Email address</label>
+                        </div>
                         <div class="invalid-feedback">An email is required.</div>
                         <div class="invalid-feedback">Email is not valid.</div>
                     </div>
-                    <!-- Phone number input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="phone" name="phone" type="tel" placeholder="(123) 456-7890"
-                            maxlength="30" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
-                        <label for="phone">Phone number (Optional)</label>
+                    <!-- Phone number input with country code selector -->
+                    <div class="form-floating-custom mb-3">
+                        <div class="phone-input-group">
+                            <!-- Country Code Selector -->
+                            <div class="country-selector">
+                                <button type="button" class="country-selector-btn" id="countrySelector">
+                                    <img src="https://flagcdn.com/w40/us.png" alt="US" class="country-flag"
+                                        id="selectedFlag">
+                                    <span class="country-code" id="selectedCode">+1</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <!-- Country Dropdown -->
+                                <div class="country-dropdown" id="countryDropdown">
+                                    <div class="country-search">
+                                        <i class="fas fa-search"></i>
+                                        <input type="text" id="countrySearch" placeholder="Search country...">
+                                    </div>
+                                    <div class="country-list" id="countryList">
+                                        <!-- Countries will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Phone Number Input -->
+                            <input class="form-control phone-number-input" id="phone" name="phone" type="tel"
+                                placeholder="Phone number (Optional)" maxlength="15"
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+                            <label for="phone" class="floating-label">Phone number (Optional)</label>
+                        </div>
                     </div>
                     <!-- Message input-->
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control" id="message" name="message" type="text"
-                            placeholder="Enter your message here..." style="height: 10rem"></textarea>
-                        <label for="message">Message (Optional)</label>
+                    <div class="form-floating-custom mb-3">
+                        <div class="custom-input-group">
+                            <textarea class="form-control custom-input" id="message" name="message"
+                                placeholder="Enter your message here..." style="height: 10rem"></textarea>
+                            <label for="message" class="floating-label">Message (Optional)</label>
+                        </div>
                     </div>
                     <!-- Submit success message-->
                     <div class="d-none" id="submitSuccessMessage">
