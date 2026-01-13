@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 
 /*!
 * Start Bootstrap - Freelancer v7.0.7 (https://startbootstrap.com/theme/freelancer)
@@ -827,7 +827,7 @@ progress {
 }
 
 .blockquote-footer::before {
-  content: "— ";
+  content: "â€”Â ";
 }
 
 .img-fluid {
@@ -12877,67 +12877,6 @@ html {
   font-weight: 700;
   background-color: transparent;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: background-color 0.3s, padding-top 0.3s, padding-bottom 0.3s;
-}
-
-#mainNav.navbar-light-mode {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-#mainNav.navbar-light-mode .navbar-brand {
-  color: #2c3e50;
-}
-
-#mainNav.navbar-light-mode .navbar-nav li.nav-item a.nav-link {
-  color: #2c3e50;
-}
-
-#mainNav.navbar-light-mode .navbar-nav li.nav-item a.nav-link:hover {
-  color: #1abc9c;
-}
-
-#mainNav.navbar-light-mode .navbar-nav li.nav-item a.nav-link:active,
-#mainNav.navbar-light-mode .navbar-nav li.nav-item a.nav-link:focus {
-  color: #1abc9c;
-  background: transparent;
-}
-
-#mainNav.navbar-light-mode .navbar-toggler {
-  color: #2c3e50;
-  border-color: rgba(0, 0, 0, 0.1);
-}
-
-
-#mainNav .navbar-brand {
-  color: #fff;
-}
-
-#mainNav .navbar-nav {
-  margin-top: 1rem;
-}
-
-#mainNav .navbar-nav li.nav-item a.nav-link {
-  color: #fff;
-}
-
-#mainNav .navbar-nav li.nav-item a.nav-link:hover {
-  color: #000 !important;
-}
-
-#mainNav .navbar-nav li.nav-item a.nav-link:active,
-#mainNav .navbar-nav li.nav-item a.nav-link:focus {
-  color: #fff;
-}
-
-#mainNav .navbar-nav li.nav-item a.nav-link.active {
-  color: inherit;
-}
-
-#mainNav .navbar-toggler {
-  font-size: 80%;
-  padding: 0.8rem;
 }
 
 @media (min-width: 992px) {
@@ -12948,33 +12887,33 @@ html {
   }
 
   #mainNav .navbar-brand {
-    font-size: 1.75em;
-    transition: font-size 0.3s;
+    color: #2c3e50;
   }
 
-  #mainNav .navbar-nav {
-    margin-top: 0;
+  #mainNav .navbar-nav li.nav-item a.nav-link {
+    color: #2c3e50;
   }
 
-  #mainNav .navbar-nav>li.nav-item>a.nav-link.active {
-    color: inherit;
-    background: transparent;
+
+  #mainNav .navbar-nav li.nav-item a.nav-link:active,
+  #mainNav .navbar-nav li.nav-item a.nav-link:focus {
+    color: #1abc9c !important;
+    outline: 2px solid #1abc9c;
+    outline-offset: -2px;
   }
 
-  #mainNav .navbar-nav>li.nav-item>a.nav-link.active:active,
-  #mainNav .navbar-nav>li.nav-item>a.nav-link.active:focus,
-  #mainNav .navbar-nav>li.nav-item>a.nav-link.active:hover {
-    color: inherit;
-    background: transparent;
+  #mainNav .navbar-nav li.nav-item a.nav-link.active {
+    color: #1abc9c !important;
+  }
+
+  #mainNav .navbar-toggler {
+    font-size: 80%;
+    padding: 0.8rem;
   }
 
   #mainNav.navbar-shrink {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-  }
-
-  #mainNav.navbar-shrink .navbar-brand {
-    font-size: 1.5em;
   }
 }
 
@@ -13404,7 +13343,7 @@ html {
 }
 
 .feature-card-list li::before {
-  content: "•";
+  content: "â€¢";
   position: absolute;
   left: 0;
   color: #4880ff;

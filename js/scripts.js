@@ -44,38 +44,6 @@ window.addEventListener('DOMContentLoaded', event => {
             });
         });
 
-        // Dynamic Navbar Text Color based on section background
-        const sections = document.querySelectorAll('section, header.masthead');
-        const mainNavElement = document.querySelector('#mainNav');
-
-        if (!mainNavElement) return;
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '-10% 0% -85% 0%', // Detect what's under the header
-            threshold: 0
-        };
-
-        const observerCallback = (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = entry.target;
-                    // Sections with white backgrounds: About (no bg class), Skills (no bg class), Contact (no bg class)
-                    // Sections with teal backgrounds: Masthead (bg-primary), Experience (bg-primary), Portfolio (bg-primary)
-                    const isWhiteSection = !target.classList.contains('bg-primary') && !target.classList.contains('bg-primary-1');
-
-                    if (isWhiteSection) {
-                        mainNavElement.classList.add('navbar-light-mode');
-                    } else {
-                        mainNavElement.classList.remove('navbar-light-mode');
-                    }
-                }
-            });
-        };
-
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
-        sections.forEach(section => observer.observe(section));
-
         // Scroll Reveal Implementation
         const revealOptions = {
             threshold: 0.1,
