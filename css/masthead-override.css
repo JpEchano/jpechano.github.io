@@ -146,19 +146,19 @@
 
 .tag-1 {
     top: 15%;
-    right: -5%;
+    right: 5%;
     animation-delay: 0s;
 }
 
 .tag-2 {
     top: 45%;
-    right: -15%;
+    right: -5%;
     animation-delay: 1s;
 }
 
 .tag-3 {
     bottom: 20%;
-    right: -5%;
+    right: 5%;
     animation-delay: 2s;
 }
 
