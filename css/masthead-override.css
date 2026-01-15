@@ -4,7 +4,8 @@
 .masthead {
     padding-top: calc(6rem + 74px);
     padding-bottom: 6rem;
-    min-height: 100vh;
+    min-height: 80vh;
+    max-height: 1000px;
     position: relative;
     overflow: hidden;
     /* Explicitly set blue background and wavy background image */
@@ -12,6 +13,8 @@
     background-size: cover !important;
     /* Remove the dark text color override */
     color: #fff !important;
+    display: flex;
+    align-items: center;
 }
 
 .masthead-content {
@@ -224,9 +227,12 @@
 
     .masthead {
         text-align: center;
-        padding-top: 4rem !important;
+        padding-top: 6rem !important;
+        padding-bottom: 6rem !important;
         padding-left: 1.5rem !important;
         padding-right: 1.5rem !important;
+        min-height: auto !important;
+        max-height: none;
         background: radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
             #4880ff url('../assets/img/background2.png') no-repeat center center !important;
         background-size: cover !important;
