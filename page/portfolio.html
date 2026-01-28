@@ -1,128 +1,345 @@
 <!-- Portfolio Section-->
-<section class="page-section bg-slate-50" id="portfolio">
+<section class="page-section bg-slate-900" id="portfolio">
     <div class="container">
         <!-- Section Heading-->
         <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold mb-3">Featured Case Studies</h2>
-            <p class="lead text-slate-600 mx-auto" style="max-width: 700px;">
-                A selection of high-impact mobile applications delivered for global enterprises and innovative startups.
+            <h2 class="display-5 fw-bold mb-3 text-white">Featured Projects</h2>
+            <p class="lead text-slate-400 mx-auto" style="max-width: 700px;">
+                A showcase of high-impact mobile applications delivered for global enterprises and innovative startups.
             </p>
         </div>
 
-        <div class="row g-4">
-            <!-- Project 1: myPAL -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden hover-lift">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="assets/img/portfolio/mypal.jpg" alt="myPAL - Philippine Airlines" />
-                        <div class="position-absolute top-0 end-0 m-3">
-                            <span class="badge bg-success text-white px-3 py-2 rounded-pill shadow-sm">30% Booking
-                                Increase</span>
+        <!-- Carousel Container with Custom Controls -->
+        <div class="position-relative">
+            <!-- Carousel -->
+            <div id="portfolioCarousel" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                </div>
+
+                <div class="carousel-inner py-4">
+                    <!-- Slide 1: Featured Projects -->
+                    <div class="carousel-item active">
+                        <div class="row g-4 px-md-5">
+                            <!-- myPAL -->
+                            <div class="col-lg-4 col-md-6">
+                                <a href="projects/mypal.html"
+                                    class="card h-100 bg-slate-800 border-0 shadow-sm overflow-hidden hover-lift text-decoration-none">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/img/portfolio/mypal.jpg"
+                                            alt="myPAL - Philippine Airlines" />
+                                        <div class="position-absolute top-0 end-0 m-3">
+                                            <span
+                                                class="badge bg-success text-white px-3 py-2 rounded-pill shadow-sm">30%
+                                                Booking Increase</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Travel &
+                                            Aviation</div>
+                                        <h3 class="h4 fw-bold mb-3 text-white">myPAL - Philippine Airlines</h3>
+                                        <p class="text-slate-400 mb-0">
+                                            Modernizing the travel experience for millions of passengers with a
+                                            high-performance, scalable Android application.
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Paymaya SDK -->
+                            <div class="col-lg-4 col-md-6">
+                                <a href="projects/paymaya.html"
+                                    class="card h-100 bg-slate-800 border-0 shadow-sm overflow-hidden hover-lift text-decoration-none">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/img/portfolio/paymaya-sdk.png"
+                                            alt="Paymaya SDK" />
+                                        <div class="position-absolute top-0 end-0 m-3">
+                                            <span class="badge bg-info text-white px-3 py-2 rounded-pill shadow-sm">100+
+                                                Integrations</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Fintech & SDK
+                                        </div>
+                                        <h3 class="h4 fw-bold mb-3 text-white">Maya (Paymaya) SDK</h3>
+                                        <p class="text-slate-400 mb-0">
+                                            Empowering developers to integrate seamless payment solutions into their own
+                                            applications with a secure, modular SDK.
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- SAV-E -->
+                            <div class="col-lg-4 col-md-6">
+                                <a href="projects/save.html"
+                                    class="card h-100 bg-slate-800 border-0 shadow-sm overflow-hidden hover-lift text-decoration-none">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/img/portfolio/sav-e.png" alt="SAV-E" />
+                                        <div class="position-absolute top-0 end-0 m-3">
+                                            <span
+                                                class="badge bg-primary-600 text-white px-3 py-2 rounded-pill shadow-sm">$10M+
+                                                Processed</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Banking &
+                                            Finance</div>
+                                        <h3 class="h4 fw-bold mb-3 text-white">SAV-E Mobile Banking</h3>
+                                        <p class="text-slate-400 mb-0">
+                                            Driving financial inclusion through an intuitive and secure mobile banking
+                                            experience with automated savings rules.
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-body p-4">
-                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Travel & Aviation</div>
-                        <h3 class="h4 fw-bold mb-3">myPAL - Philippine Airlines</h3>
-                        <p class="text-slate-600 mb-4">
-                            Modernizing the travel experience for millions of passengers with a high-performance,
-                            scalable Android application.
-                        </p>
-                        <a href="page/case-studies.html#mypal"
-                            class="btn btn-link text-primary-600 fw-bold p-0 text-decoration-none">
-                            View Case Study <i class="fas fa-arrow-right ms-1"></i>
-                        </a>
+
+                    <!-- Slide 2: Voyager Projects -->
+                    <div class="carousel-item">
+                        <div class="row g-4 px-md-5">
+                            <!-- Smartnet -->
+                            <div class="col-lg-4 col-md-6">
+                                <a href="projects/smartnet.html"
+                                    class="card h-100 bg-slate-800 border-0 shadow-sm overflow-hidden hover-lift text-decoration-none">
+                                    <img class="img-fluid" src="assets/img/portfolio/smartnet.jpg" alt="Smartnet" />
+                                    <div class="card-body p-4">
+                                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Free Internet
+                                        </div>
+                                        <h3 class="h4 fw-bold mb-3 text-white">Smartnet</h3>
+                                        <p class="text-slate-400 mb-0">Free Internet Portal providing access to social
+                                            networks and services without data charges.</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Freenet -->
+                            <div class="col-lg-4 col-md-6">
+                                <a href="projects/freenet.html"
+                                    class="card h-100 bg-slate-800 border-0 shadow-sm overflow-hidden hover-lift text-decoration-none">
+                                    <img class="img-fluid" src="assets/img/portfolio/freenet.png" alt="Freenet" />
+                                    <div class="card-body p-4">
+                                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Partner Access
+                                        </div>
+                                        <h3 class="h4 fw-bold mb-3 text-white">Freenet</h3>
+                                        <p class="text-slate-400 mb-0">Free access to partner apps and sites including
+                                            Facebook, Twitter, Instagram, and more.</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Chikka -->
+                            <div class="col-lg-4 col-md-6">
+                                <a href="projects/chikka.html"
+                                    class="card h-100 bg-slate-800 border-0 shadow-sm overflow-hidden hover-lift text-decoration-none">
+                                    <img class="img-fluid" src="assets/img/portfolio/chikka.png" alt="Chikka" />
+                                    <div class="card-body p-4">
+                                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Messaging</div>
+                                        <h3 class="h4 fw-bold mb-3 text-white">Chikka</h3>
+                                        <p class="text-slate-400 mb-0">Free messaging app with voice messages, group
+                                            chat, and cross-platform synchronization.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: More Projects -->
+                    <div class="carousel-item">
+                        <div class="row g-4 px-md-5">
+                            <!-- PowerApp -->
+                            <div class="col-lg-4 col-md-6">
+                                <a href="projects/powerapp.html"
+                                    class="card h-100 bg-slate-800 border-0 shadow-sm overflow-hidden hover-lift text-decoration-none">
+                                    <img class="img-fluid" src="assets/img/portfolio/powerapp.png" alt="PowerApp" />
+                                    <div class="card-body p-4">
+                                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Utility Services
+                                        </div>
+                                        <h3 class="h4 fw-bold mb-3 text-white">PowerApp</h3>
+                                        <p class="text-slate-400 mb-0">Award-winning mobile utility services app,
+                                            recognized as Most Innovative at Asia Communication Awards.</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- SafeZone -->
+                            <div class="col-lg-4 col-md-6">
+                                <a href="projects/safezone.html"
+                                    class="card h-100 bg-slate-800 border-0 shadow-sm overflow-hidden hover-lift text-decoration-none">
+                                    <img class="img-fluid" src="assets/img/portfolio/safezone.jpg" alt="SafeZone" />
+                                    <div class="card-body p-4">
+                                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Free Internet
+                                            Zone</div>
+                                        <h3 class="h4 fw-bold mb-3 text-white">SafeZone</h3>
+                                        <p class="text-slate-400 mb-0">Protected free internet access to lifestyle needs
+                                            including social networks, shopping, news, and more.</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- ParkPlus -->
+                            <div class="col-lg-4 col-md-6">
+                                <a href="projects/parkplus.html"
+                                    class="card h-100 bg-slate-800 border-0 shadow-sm overflow-hidden hover-lift text-decoration-none">
+                                    <img class="img-fluid" src="assets/img/portfolio/parkplus.jpg" alt="ParkPlus" />
+                                    <div class="card-body p-4">
+                                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Smart Parking
+                                        </div>
+                                        <h3 class="h4 fw-bold mb-3 text-white">ParkPlus</h3>
+                                        <p class="text-slate-400 mb-0">Hassle-free parking solution providing faster and
+                                            more convenient parking experiences.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Additional Projects -->
+                    <div class="carousel-item">
+                        <div class="row g-4 px-md-5">
+                            <!-- Utility Apps -->
+                            <div class="col-lg-4 col-md-6">
+                                <a href="projects/utility-apps.html"
+                                    class="card h-100 bg-slate-800 border-0 shadow-sm overflow-hidden hover-lift text-decoration-none">
+                                    <img class="img-fluid" src="assets/img/portfolio/utility-apps.png"
+                                        alt="Utility Apps" />
+                                    <div class="card-body p-4">
+                                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Utility Services
+                                        </div>
+                                        <h3 class="h4 fw-bold mb-3 text-white">Utility Mobile Apps</h3>
+                                        <p class="text-slate-400 mb-0">Mobile apps for utility company providing
+                                            seamless access to services and account management.</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Submarine -->
+                            <div class="col-lg-4 col-md-6">
+                                <a href="projects/submarine.html"
+                                    class="card h-100 bg-slate-800 border-0 shadow-sm overflow-hidden hover-lift text-decoration-none">
+                                    <img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="Submarine" />
+                                    <div class="card-body p-4">
+                                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Experimental
+                                        </div>
+                                        <h3 class="h4 fw-bold mb-3 text-white">Submarine</h3>
+                                        <p class="text-slate-400 mb-0">Experimental underwater exploration interface
+                                            with real-time telemetry and 3D visualization.</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Safe Box -->
+                            <div class="col-lg-4 col-md-6">
+                                <a href="projects/safe-box.html"
+                                    class="card h-100 bg-slate-800 border-0 shadow-sm overflow-hidden hover-lift text-decoration-none">
+                                    <img class="img-fluid" src="assets/img/portfolio/safe.png" alt="Safe Box" />
+                                    <div class="card-body p-4">
+                                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Security</div>
+                                        <h3 class="h4 fw-bold mb-3 text-white">Safe Box</h3>
+                                        <p class="text-slate-400 mb-0">Secure digital vault application with high-level
+                                            encryption for storing sensitive information.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 2: Paymaya SDK -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden hover-lift">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="assets/img/portfolio/paymaya-sdk.png" alt="Paymaya SDK" />
-                        <div class="position-absolute top-0 end-0 m-3">
-                            <span class="badge bg-info text-white px-3 py-2 rounded-pill shadow-sm">100+
-                                Integrations</span>
-                        </div>
-                    </div>
-                    <div class="card-body p-4">
-                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Fintech & SDK</div>
-                        <h3 class="h4 fw-bold mb-3">Maya (Paymaya) SDK</h3>
-                        <p class="text-slate-600 mb-4">
-                            Empowering developers to integrate seamless payment solutions into their own applications
-                            with a secure, modular SDK.
-                        </p>
-                        <a href="page/case-studies.html#paymaya"
-                            class="btn btn-link text-primary-600 fw-bold p-0 text-decoration-none">
-                            View Case Study <i class="fas fa-arrow-right ms-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3: SAV-E -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden hover-lift">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="assets/img/portfolio/sav-e.png" alt="SAV-E" />
-                        <div class="position-absolute top-0 end-0 m-3">
-                            <span class="badge bg-primary-600 text-white px-3 py-2 rounded-pill shadow-sm">$10M+
-                                Processed</span>
-                        </div>
-                    </div>
-                    <div class="card-body p-4">
-                        <div class="text-primary-600 small fw-bold text-uppercase mb-2">Banking & Finance</div>
-                        <h3 class="h4 fw-bold mb-3">SAV-E Mobile Banking</h3>
-                        <p class="text-slate-600 mb-4">
-                            Driving financial inclusion through an intuitive and secure mobile banking experience with
-                            automated savings rules.
-                        </p>
-                        <a href="page/case-studies.html#save"
-                            class="btn btn-link text-primary-600 fw-bold p-0 text-decoration-none">
-                            View Case Study <i class="fas fa-arrow-right ms-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Secondary Projects Grid -->
-        <div class="mt-5 pt-4">
-            <h4 class="h5 fw-bold text-slate-400 text-center text-uppercase tracking-wider mb-4">Other
-                Notable Projects
-            </h4>
-            <div class="row g-3 justify-content-center">
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div
-                        class="p-3 bg-white rounded-3 shadow-sm text-center border border-slate-100 h-100 d-flex align-items-center justify-content-center">
-                        <span class="fw-bold text-slate-700">Smartnet</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div
-                        class="p-3 bg-white rounded-3 shadow-sm text-center border border-slate-100 h-100 d-flex align-items-center justify-content-center">
-                        <span class="fw-bold text-slate-700">Freenet</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div
-                        class="p-3 bg-white rounded-3 shadow-sm text-center border border-slate-100 h-100 d-flex align-items-center justify-content-center">
-                        <span class="fw-bold text-slate-700">Chikka</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div
-                        class="p-3 bg-white rounded-3 shadow-sm text-center border border-slate-100 h-100 d-flex align-items-center justify-content-center">
-                        <span class="fw-bold text-slate-700">PowerApp</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div
-                        class="p-3 bg-white rounded-3 shadow-sm text-center border border-slate-100 h-100 d-flex align-items-center justify-content-center">
-                        <span class="fw-bold text-slate-700">SafeZone</span>
-                    </div>
-                </div>
-            </div>
+            <!-- Custom Carousel Controls - Outside the cards -->
+            <button class="portfolio-carousel-control portfolio-carousel-prev" type="button"
+                data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                <i class="fas fa-chevron-left"></i>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="portfolio-carousel-control portfolio-carousel-next" type="button"
+                data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                <i class="fas fa-chevron-right"></i>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
 </section>
+
+<style>
+    /* Custom Portfolio Carousel Controls */
+    .portfolio-carousel-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        background: var(--bs-primary);
+        border: none;
+        border-radius: 50%;
+        color: white;
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: all 0.3s ease;
+    }
+
+    .portfolio-carousel-control:hover {
+        background: var(--bs-primary);
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .portfolio-carousel-prev {
+        left: -25px;
+    }
+
+    .portfolio-carousel-next {
+        right: -25px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .portfolio-carousel-prev {
+            left: 10px;
+        }
+
+        .portfolio-carousel-next {
+            right: 10px;
+        }
+
+        .portfolio-carousel-control {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+        }
+    }
+
+    /* Hide default Bootstrap carousel controls */
+    #portfolioCarousel .carousel-control-prev,
+    #portfolioCarousel .carousel-control-next {
+        display: none;
+    }
+
+    /* Style carousel indicators */
+    #portfolioCarousel .carousel-indicators {
+        margin-bottom: -2rem;
+    }
+
+    #portfolioCarousel .carousel-indicators button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--bs-primary);
+        opacity: 0.5;
+        border: none;
+    }
+
+    #portfolioCarousel .carousel-indicators button.active {
+        opacity: 1;
+    }
+</style>

@@ -1,58 +1,92 @@
-<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2"
-    aria-hidden="true">
+<div class="portfolio-modal modal fade" id="sscModal" tabindex="-1" aria-labelledby="sscModal" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="portfolio-modal-title">SSC Portal</h2>
-                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content bg-slate-900 border-slate-800">
+            <div class="modal-header border-slate-800">
+                <h2 class="portfolio-modal-title text-white">Self-Service Center (SSC)</h2>
+                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="modal-project-grid">
                         <!-- Left Column: Image -->
                         <div class="modal-project-image-container">
-                            <img class="modal-project-image" src="assets/img/portfolio/ssc.png" alt="SSC Portal" />
+                            <img class="modal-project-image rounded-4 shadow-sm" src="assets/img/accenture.png"
+                                alt="SSC" />
+
+                            <div class="mt-4 d-none d-lg-block">
+                                <h4 class="modal-section-title text-slate-400"><i class="fas fa-calendar-alt me-2"></i>
+                                    Timeline</h4>
+                                <p class="modal-text-content text-slate-300">Jan 2018 - Dec 2018</p>
+                                <p class="modal-text-content text-slate-400 small"><strong>Associated with
+                                        Accenture</strong></p>
+                            </div>
                         </div>
 
                         <!-- Right Column: Details -->
                         <div class="modal-project-details">
                             <div class="mb-5">
-                                <h4 class="modal-section-title"><i class="fas fa-circle-info"></i> Project Overview</h4>
-                                <p class="modal-text-content">
-                                    A dedicated portal for the Supreme Student Council, streamlining communication
-                                    between student leaders and the student body. Features include announcement
-                                    management and event tracking.
+                                <h4 class="modal-section-title text-slate-400"><i class="fas fa-circle-info me-2"></i>
+                                    Project Overview</h4>
+                                <p class="modal-text-content text-slate-300">
+                                    A self-service portal for employees to manage their profiles, benefits, and internal
+                                    requests. Streamlined HR processes and improved employee engagement.
                                 </p>
                             </div>
 
                             <div class="mb-5">
-                                <h4 class="modal-section-title"><i class="fas fa-list-check"></i> Key Features</h4>
+                                <h4 class="modal-section-title text-slate-400"><i class="fas fa-star me-2"></i> Key
+                                    Features</h4>
                                 <div class="feature-grid">
-                                    <div class="feature-card">
-                                        <div class="feature-card-title"><i class="fas fa-bullhorn"></i> Announcements
+                                    <div class="feature-card bg-slate-800 border-slate-700">
+                                        <div class="feature-card-title text-white"><i
+                                                class="fas fa-user-gear text-primary-600 me-2"></i> Profile Management
                                         </div>
-                                        <p class="small text-muted mb-0">Centralized hub for all student council news.
-                                        </p>
+                                        <p class="small text-slate-400 mb-0">Update personal and professional info</p>
                                     </div>
-                                    <div class="feature-card">
-                                        <div class="feature-card-title"><i class="fas fa-calendar-days"></i> Event
-                                            Calendar</div>
-                                        <p class="small text-muted mb-0">Track upcoming school activities and meetings.
-                                        </p>
+                                    <div class="feature-card bg-slate-800 border-slate-700">
+                                        <div class="feature-card-title text-white"><i
+                                                class="fas fa-hand-holding-heart text-primary-600 me-2"></i> Benefits
+                                            Portal</div>
+                                        <p class="small text-slate-400 mb-0">View and manage employee benefits</p>
                                     </div>
-                                    <div class="feature-card">
-                                        <div class="feature-card-title"><i class="fas fa-comments"></i> Feedback</div>
-                                        <p class="small text-muted mb-0">Direct channel for student suggestions.</p>
+                                    <div class="feature-card bg-slate-800 border-slate-700">
+                                        <div class="feature-card-title text-white"><i
+                                                class="fas fa-file-lines text-primary-600 me-2"></i> Request System
+                                        </div>
+                                        <p class="small text-slate-400 mb-0">Submit and track internal requests</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="modal-footer-actions d-flex flex-column align-items-center">
-                                <button class="btn btn-primary btn-lg rounded-pill px-5 disabled" disabled>
-                                    <i class="fas fa-external-link-alt me-2"></i> Visit this Project
-                                </button>
-                                <p class="small text-muted mt-2 mb-0">Coming Soon</p>
+                            <div class="mb-5">
+                                <h4 class="modal-section-title text-slate-400"><i class="fas fa-code me-2"></i> Tech
+                                    Stack</h4>
+                                <div class="feature-grid">
+                                    <div class="feature-card bg-slate-800 border-slate-700">
+                                        <div class="feature-card-title text-white"><i
+                                                class="fab fa-java text-primary-600 me-2"></i> Java</div>
+                                        <p class="small text-slate-400 mb-0">Backend services</p>
+                                    </div>
+                                    <div class="feature-card bg-slate-800 border-slate-700">
+                                        <div class="feature-card-title text-white"><i
+                                                class="fas fa-database text-primary-600 me-2"></i> Oracle DB</div>
+                                        <p class="small text-slate-400 mb-0">Relational database</p>
+                                    </div>
+                                    <div class="feature-card bg-slate-800 border-slate-700">
+                                        <div class="feature-card-title text-white"><i
+                                                class="fas fa-server text-primary-600 me-2"></i> WebLogic</div>
+                                        <p class="small text-slate-400 mb-0">Application server</p>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="d-lg-none mb-5">
+                                <h4 class="modal-section-title text-slate-400"><i class="fas fa-calendar-alt me-2"></i>
+                                    Timeline</h4>
+                                <p class="modal-text-content text-slate-300">Jan 2018 - Dec 2018</p>
+                                <p class="modal-text-content text-slate-400 small"><strong>Associated with
+                                        Accenture</strong></p>
                             </div>
                         </div>
                     </div>
