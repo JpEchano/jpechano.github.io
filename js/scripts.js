@@ -136,11 +136,27 @@ window.addEventListener('DOMContentLoaded', event => {
 
         // Target all elements with reveal classes
         const revealElements = document.querySelectorAll(
-            '.reveal-fade-in, .reveal-slide-up, .reveal-slide-left, .reveal-slide-right, .reveal-scale-up, .reveal-staggered'
+            '.reveal-fade-in, .reveal-slide-up, .reveal-slide-left, .reveal-slide-right, .reveal-scale-up, .reveal-staggered, .reveal-premium-up, .reveal-staggered-premium'
         );
         revealElements.forEach(el => {
             revealObserver.observe(el);
         });
+
+        // Lightweight Parallax Effect
+        const parallaxElements = document.querySelectorAll('.reveal-parallax');
+        if (parallaxElements.length > 0) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                parallaxElements.forEach(el => {
+                    const speed = el.dataset.speed || 0.1;
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        const yPos = -(scrolled * speed);
+                        el.style.transform = `translateY(${yPos}px)`;
+                    }
+                });
+            });
+        }
 
         // Update copyright year
         const yearElement = document.querySelector('#copyright-year');

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <!-- Left Column: Contact Info & CTA -->
-            <div class="col-lg-5 mb-5 mb-lg-0 reveal-slide-left">
+            <div class="col-lg-5 mb-5 mb-lg-0 reveal-premium-up">
                 <h2 class="display-5 fw-bold mb-4 text-white">Let's Build Something <span
                         class="text-gradient">Exceptional</span>
                 </h2>
@@ -40,28 +40,88 @@
             </div>
 
             <!-- Right Column: Contact Form -->
-            <div class="col-lg-6 offset-lg-1 reveal-slide-right">
+            <div class="col-lg-6 offset-lg-1 reveal-premium-up">
                 <div class="card border-0 shadow-lg p-4 p-md-5 bg-slate-800 rounded-4 border border-slate-700">
                     <form id="contactForm">
+                        <!-- Name Input -->
                         <div class="mb-4">
                             <label for="name" class="form-label small fw-bold text-slate-300">Full Name</label>
                             <input type="text" class="form-control bg-slate-900 border-slate-700 text-white p-3"
-                                id="name" placeholder="John Doe" required>
+                                id="name" name="name" placeholder="John Doe" required>
                         </div>
+
+                        <!-- Email Input -->
                         <div class="mb-4">
                             <label for="email" class="form-label small fw-bold text-slate-300">Email Address</label>
                             <input type="email" class="form-control bg-slate-900 border-slate-700 text-white p-3"
-                                id="email" placeholder="john@example.com" required>
+                                id="email" name="email" placeholder="john@example.com" required>
+                            <div class="invalid-feedback text-danger small mt-1" style="display: none;">Email is
+                                required.</div>
+                            <div class="invalid-feedback text-danger small mt-1" style="display: none;">Please enter a
+                                valid email address.</div>
                         </div>
+
+                        <!-- Phone Input with Country Selector -->
+                        <div class="mb-4">
+                            <label for="phone" class="form-label small fw-bold text-slate-300">Phone Number
+                                (Optional)</label>
+                            <div
+                                class="phone-input-group bg-slate-900 border border-slate-700 rounded-3 overflow-visible">
+                                <div class="country-selector" id="countrySelector">
+                                    <button type="button" class="country-selector-btn text-white border-slate-700">
+                                        <img src="https://flagcdn.com/w40/us.png" alt="US" class="country-flag"
+                                            id="selectedFlag">
+                                        <span class="country-code" id="selectedCode">+1</span>
+                                        <i class="fas fa-chevron-down ms-auto small opacity-50"></i>
+                                    </button>
+                                    <div class="country-dropdown bg-slate-800 border border-slate-700 shadow-lg"
+                                        id="countryDropdown">
+                                        <div class="country-search p-2 border-bottom border-slate-700 bg-slate-900">
+                                            <div class="position-relative">
+                                                <i
+                                                    class="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3 text-slate-500"></i>
+                                                <input type="text"
+                                                    class="form-control form-control-sm ps-5 bg-slate-800 border-slate-700 text-white"
+                                                    id="countrySearch" placeholder="Search country...">
+                                            </div>
+                                        </div>
+                                        <div class="country-list custom-scrollbar" id="countryList">
+                                            <!-- Populated by JS -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="tel" class="form-control border-0 bg-transparent text-white p-3" id="phone"
+                                    name="phone" placeholder="555-0123">
+                            </div>
+                        </div>
+
+                        <!-- Message Input -->
                         <div class="mb-4">
                             <label for="message" class="form-label small fw-bold text-slate-300">Project Details</label>
                             <textarea class="form-control bg-slate-900 border-slate-700 text-white p-3" id="message"
-                                rows="4" placeholder="Tell me about your project..."></textarea>
+                                name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-professional btn-professional-primary w-100 py-3">
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submitButton"
+                            class="btn btn-professional btn-professional-primary w-100 py-3 disabled">
                             Send Message <i class="fas fa-paper-plane ms-2"></i>
                         </button>
                     </form>
+
+                    <!-- Success message-->
+                    <div class="d-none mt-4 p-4 bg-success-900/20 border border-success-500/30 rounded-4 text-success text-center"
+                        id="submitSuccessMessage">
+                        <div class="h5 fw-bold mb-2">Message sent successfully!</div>
+                        <p class="mb-0 small opacity-90">I'll get back to you as soon as possible.</p>
+                    </div>
+
+                    <!-- Error message-->
+                    <div class="d-none mt-4 p-4 bg-danger-900/20 border border-danger-500/30 rounded-4 text-danger text-center"
+                        id="submitErrorMessage">
+                        <div class="h5 fw-bold mb-2">Error sending message!</div>
+                        <p class="mb-0 small opacity-90">Please try again or contact me directly via LinkedIn.</p>
+                    </div>
                 </div>
             </div>
         </div>

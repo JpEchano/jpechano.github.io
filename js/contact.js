@@ -129,8 +129,9 @@ document.addEventListener('sectionsLoaded', () => {
 
     // Email validation
     const emailInput = document.getElementById('email');
-    const emailFeedbackRequired = emailInput.parentElement.nextElementSibling;
-    const emailFeedbackInvalid = emailFeedbackRequired.nextElementSibling;
+    const emailContainer = emailInput.closest('.mb-4');
+    const emailFeedbackRequired = emailContainer.querySelector('.invalid-feedback:nth-of-type(1)');
+    const emailFeedbackInvalid = emailContainer.querySelector('.invalid-feedback:nth-of-type(2)');
 
     function validateEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
