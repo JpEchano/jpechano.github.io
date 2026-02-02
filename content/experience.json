@@ -1,0 +1,30 @@
+{
+    "heading": "How I Work",
+    "subheading": "A systematic, outcomes-driven approach to building world-class mobile applications.",
+    "steps": [
+        {
+            "number": "01",
+            "title": "Discovery",
+            "description": "Deep dive into requirements, user needs, and business goals to define a clear roadmap.",
+            "color": "primary-600"
+        },
+        {
+            "number": "02",
+            "title": "Architecture",
+            "description": "Designing robust, scalable foundations using Clean Architecture and modern design patterns.",
+            "color": "info"
+        },
+        {
+            "number": "03",
+            "title": "Build & Iterate",
+            "description": "Agile development with frequent updates, unit testing, and continuous integration.",
+            "color": "success"
+        },
+        {
+            "number": "04",
+            "title": "Deliver",
+            "description": "Rigorous QA, performance optimization, and seamless deployment to the Play Store.",
+            "color": "warning"
+        }
+    ]
+}

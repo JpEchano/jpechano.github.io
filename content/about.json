@@ -1,0 +1,25 @@
+{
+    "heading": "How I Help You Succeed",
+    "description": "I don't just write code; I build products that drive business value. With over a decade of experience in high-stakes industries, I bring a strategic mindset to every project.",
+    "highlights": [
+        "Performance-First Mentality",
+        "Security & Data Integrity",
+        "User-Centric Design Thinking"
+    ],
+    "stats": [
+        {
+            "value": 12,
+            "suffix": "+",
+            "label": "Years Experience"
+        },
+        {
+            "value": 50,
+            "suffix": "+",
+            "label": "Apps Shipped"
+        }
+    ],
+    "testimonial": {
+        "quote": "Harold's expertise in Android architecture was pivotal in modernizing our mobile presence. His focus on performance and scalability is world-class.",
+        "author": "Engineering Lead, Philippine Airlines"
+    }
+}

@@ -6,6 +6,13 @@ class PortfolioExpansion {
         this.cards = document.querySelectorAll('.portfolio-card-item');
         this.expandedView = null;
         this.isExpanded = false;
+        this.closeTimeout = null; // Track the close animation timeout
+
+        // Auto-scroll properties
+        this.autoScrollSpeed = 0.5; // pixels per frame
+        this.autoScrollAnimation = null;
+        this.isHovering = false;
+        this.isPaused = false;
 
         this.init();
     }
@@ -16,6 +23,12 @@ class PortfolioExpansion {
 
         // Initial visual update
         this.updateVisuals();
+
+        // Setup entrance animation
+        this.setupEntranceAnimation();
+
+        // Start auto-scroll animation
+        this.startAutoScroll();
     }
 
     createExpandedViewContainer() {
@@ -39,10 +52,6 @@ class PortfolioExpansion {
                         <h4>Technologies Used</h4>
                         <div class="portfolio-tech-stack"></div>
                     </div>
-                    <div class="portfolio-expanded-actions">
-                        <button class="portfolio-action-btn primary view-project-btn">VIEW PROJECT</button>
-                        <button class="portfolio-action-btn secondary close-expanded-btn">CLOSE</button>
-                    </div>
                 </div>
             </div>
         `;
@@ -63,49 +72,35 @@ class PortfolioExpansion {
 
         // Close listeners
         this.expandedView.querySelector('.portfolio-close-btn').addEventListener('click', () => this.closeCard());
-        this.expandedView.querySelector('.close-expanded-btn').addEventListener('click', () => this.closeCard());
         this.expandedView.querySelector('.portfolio-expanded-backdrop').addEventListener('click', () => this.closeCard());
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && this.isExpanded) this.closeCard();
         });
 
-        // View Project
-        this.expandedView.querySelector('.view-project-btn').addEventListener('click', () => {
-            const url = this.expandedView.dataset.projectUrl;
-            if (url) window.location.href = url;
+        // Pause auto-scroll on hover
+        this.scrollContainer.addEventListener('mouseenter', () => {
+            this.isHovering = true;
+        });
+
+        this.scrollContainer.addEventListener('mouseleave', () => {
+            this.isHovering = false;
         });
     }
 
     updateVisuals() {
-        const containerCenter = this.scrollContainer.getBoundingClientRect().width / 2;
-
-        this.cards.forEach(card => {
-            const rect = card.getBoundingClientRect();
-            const cardCenter = rect.left + rect.width / 2;
-            const distanceFromCenter = cardCenter - containerCenter;
-            const absDistance = Math.abs(distanceFromCenter);
-
-            // Scaling (1.0 at center, 0.9 at edges)
-            // Only apply if not hovered (CSS hover handles that)
-            if (!card.matches(':hover')) {
-                const scale = Math.max(0.9, 1 - (absDistance / window.innerWidth) * 0.2);
-                card.style.transform = `scale(${scale})`;
-                card.style.opacity = Math.max(0.5, 1 - (absDistance / window.innerWidth) * 0.8);
-            } else {
-                card.style.transform = ''; // Let CSS hover take over
-                card.style.opacity = 1;
-            }
-
-            // Parallax (Image offset)
-            const img = card.querySelector('.card-image');
-            const parallaxOffset = (distanceFromCenter / window.innerWidth) * 20; // 20% offset
-            img.style.transform = `translateX(${parallaxOffset}%)`;
-        });
+        // Visual effects removed as per user request
     }
 
     expandCard(card) {
         if (this.isExpanded) return;
+
+        // Clear any pending close timeout to prevent flicker
+        if (this.closeTimeout) {
+            clearTimeout(this.closeTimeout);
+            this.closeTimeout = null;
+        }
+
         this.isExpanded = true;
 
         const rect = card.getBoundingClientRect();
@@ -119,7 +114,9 @@ class PortfolioExpansion {
         content.style.borderRadius = '1.5rem';
 
         // Populate data
-        const image = card.querySelector('.card-image').src;
+        // Use hover image if available, otherwise fall back to default card image
+        const hoverImage = card.querySelector('.card-image-hover');
+        const image = hoverImage ? hoverImage.src : card.querySelector('.card-image').src;
         const category = card.querySelector('.card-category').textContent;
         const title = card.querySelector('.card-title').textContent;
         const description = card.dataset.description;
@@ -141,8 +138,9 @@ class PortfolioExpansion {
             techContainer.appendChild(span);
         });
 
-        // Show view
+        // Show view and restore pointer events
         this.expandedView.style.display = 'flex';
+        this.expandedView.style.pointerEvents = 'auto';
 
         // Trigger transition
         requestAnimationFrame(() => {
@@ -154,6 +152,12 @@ class PortfolioExpansion {
 
     closeCard() {
         if (!this.isExpanded) return;
+
+        // Set to false immediately to allow clicking another card right away
+        this.isExpanded = false;
+
+        // Disable pointer events immediately so users can hover other cards
+        this.expandedView.style.pointerEvents = 'none';
 
         const content = this.expandedView.querySelector('.portfolio-expanded-content');
 
@@ -178,11 +182,131 @@ class PortfolioExpansion {
 
         this.expandedView.classList.remove('active');
 
-        setTimeout(() => {
+        // Store the timeout ID so it can be cleared if needed
+        this.closeTimeout = setTimeout(() => {
             this.expandedView.style.display = 'none';
             document.body.style.overflow = '';
-            this.isExpanded = false;
+            this.closeTimeout = null;
         }, 800);
+    }
+
+    setupEntranceAnimation() {
+        let hasAnimated = false;
+        let previousY = 0;
+        let previousRatio = 0;
+
+        // Use Intersection Observer to trigger animation when section is visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const currentY = entry.boundingClientRect.y;
+                const currentRatio = entry.intersectionRatio;
+                const isScrollingDown = currentY < previousY;
+
+                if (entry.isIntersecting && currentRatio > previousRatio) {
+                    // Only animate when scrolling down and hasn't animated yet
+                    if (isScrollingDown && !hasAnimated) {
+                        // Animate the heading first
+                        const container = entry.target.querySelector('.container');
+                        if (container) {
+                            container.classList.add('animate-in');
+                        }
+
+                        // Then trigger animation for all cards with a slight delay
+                        setTimeout(() => {
+                            this.cards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    card.classList.add('animate-in');
+
+                                    // Enable hover after animation completes
+                                    const enableHover = (e) => {
+                                        if (e.propertyName === 'opacity') {
+                                            card.style.pointerEvents = 'auto';
+                                            card.removeEventListener('transitionend', enableHover);
+                                        }
+                                    };
+                                    card.addEventListener('transitionend', enableHover);
+                                }, index * 50); // Small delay between each card for wave effect
+                            });
+                        }, 200); // Reduced delay for faster response
+
+                        hasAnimated = true;
+                    } else if (!isScrollingDown && hasAnimated) {
+                        // When scrolling up from below, keep everything visible
+                        const container = entry.target.querySelector('.container');
+                        if (container && !container.classList.contains('animate-in')) {
+                            container.classList.add('animate-in');
+                        }
+
+                        this.cards.forEach((card) => {
+                            if (!card.classList.contains('animate-in')) {
+                                card.classList.add('animate-in');
+                            }
+                            // Enable hover immediately when scrolling up
+                            card.style.pointerEvents = 'auto';
+                        });
+                    }
+                } else if (!entry.isIntersecting && currentRatio < previousRatio) {
+                    // Only reset when scrolling up past the section (going above it)
+                    const isScrollingUp = currentY > previousY;
+
+                    if (isScrollingUp) {
+                        const container = entry.target.querySelector('.container');
+                        if (container) {
+                            container.classList.remove('animate-in');
+                        }
+
+                        this.cards.forEach((card) => {
+                            card.classList.remove('animate-in');
+                            // Disable hover again for next animation
+                            card.style.pointerEvents = 'none';
+                        });
+
+                        hasAnimated = false;
+                    }
+                }
+
+                previousY = currentY;
+                previousRatio = currentRatio;
+            });
+        }, {
+            threshold: [0, 0.05, 0.1], // Lower thresholds for earlier detection
+            rootMargin: '100px 0px 0px 0px' // Trigger 100px before section enters viewport
+        });
+
+        // Observe the portfolio section
+        const portfolioSection = document.querySelector('#portfolio');
+        if (portfolioSection) {
+            observer.observe(portfolioSection);
+        }
+    }
+
+    startAutoScroll() {
+        const scroll = () => {
+            if (!this.isHovering && !this.isExpanded && this.scrollContainer) {
+                // Get current scroll position
+                const currentScroll = this.scrollContainer.scrollLeft;
+                const maxScroll = this.scrollContainer.scrollWidth - this.scrollContainer.clientWidth;
+
+                // Increment scroll position
+                this.scrollContainer.scrollLeft += this.autoScrollSpeed;
+
+                // Loop back to start when reaching the end
+                if (this.scrollContainer.scrollLeft >= maxScroll) {
+                    this.scrollContainer.scrollLeft = 0;
+                }
+            }
+
+            this.autoScrollAnimation = requestAnimationFrame(scroll);
+        };
+
+        this.autoScrollAnimation = requestAnimationFrame(scroll);
+    }
+
+    stopAutoScroll() {
+        if (this.autoScrollAnimation) {
+            cancelAnimationFrame(this.autoScrollAnimation);
+            this.autoScrollAnimation = null;
+        }
     }
 }
 

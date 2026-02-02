@@ -1,5 +1,5 @@
 <section class="page-section bg-slate-900" id="portfolio">
-    <div class="container mb-5">
+    <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase text-white">Portfolio</h2>
             <h3 class="section-subheading text-slate-400">Selected Projects & Professional Experience</h3>
@@ -11,10 +11,13 @@
         <div class="portfolio-track">
             <!-- myPAL -->
             <div class="portfolio-card-item"
-                data-description="Modernizing the travel experience for millions of passengers with a high-performance, scalable Android application. Built with Jetpack Compose and modern architecture patterns."
-                data-tech-stack="Kotlin, Jetpack Compose, MVVM, Coroutines, Retrofit, Room" data-bg-color="#1a1a1a">
+                data-description="The flagship mobile application for Philippine Airlines, transforming the digital travel experience for global passengers. Features seamless flight booking, real-time check-in with digital boarding passes, comprehensive flight status tracking, and deep integration with the Mabuhay Miles loyalty program. Engineered for scalability and high availability."
+                data-tech-stack="Kotlin, Jetpack Compose, Clean Architecture, Coroutines, Retrofit, Room, Biometric Auth"
+                data-bg-color="#1a1a1a">
                 <div class="card-image-wrapper">
-                    <img class="card-image" src="assets/img/portfolio/mypal.jpg" alt="myPAL - Philippine Airlines" />
+                    <img class="card-image" src="assets/img/portfolio/mypalCard.png"
+                        alt="myPAL - Philippine Airlines" /> <img class="card-image-hover"
+                        src="assets/img/portfolio/mypalHoverCard.png" alt="myPAL - Philippine Airlines Hover" />
                     <div class="card-overlay">
                         <div class="card-category">Travel & Aviation</div>
                         <h3 class="card-title">myPAL - Philippine Airlines</h3>
@@ -24,11 +27,13 @@
 
             <!-- Paymaya SDK -->
             <div class="portfolio-card-item"
-                data-description="Empowering developers to integrate seamless payment solutions into their own applications with a secure, modular SDK. Trusted by 100+ partner applications."
-                data-tech-stack="Kotlin, SDK Development, Security, Payment Gateway, API Design"
+                data-description="A secure, modular Payment SDK enabling third-party merchants to accept in-app payments seamlessly. Supports credit/debit cards, PayMaya wallet, and QR payments. Features a customizable UI kit, bank-grade encryption, and strict PCI-DSS compliance, empowering hundreds of partner apps to monetize effectively."
+                data-tech-stack="Kotlin, Payment Security, PCI-DSS, Encryption, SDK Design, API Integration"
                 data-bg-color="#0d1117">
                 <div class="card-image-wrapper">
-                    <img class="card-image" src="assets/img/portfolio/paymaya-sdk.png" alt="Paymaya SDK" />
+                    <img class="card-image" src="assets/img/portfolio/payMayaCard.png" alt="Paymaya SDK" /> <img
+                        class="card-image-hover" src="assets/img/portfolio/paymayaHoverCard.png"
+                        alt="Paymaya SDK Hover" />
                     <div class="card-overlay">
                         <div class="card-category">Fintech & SDK</div>
                         <h3 class="card-title">Maya (Paymaya) SDK</h3>
@@ -36,26 +41,15 @@
                 </div>
             </div>
 
-            <!-- SAV-E -->
-            <div class="portfolio-card-item"
-                data-description="Driving financial inclusion through an intuitive and secure mobile banking experience with automated savings rules. Processing over $10M in transactions."
-                data-tech-stack="Kotlin, Banking APIs, Security, Biometrics, Firebase, Material Design"
-                data-bg-color="#1e293b">
-                <div class="card-image-wrapper">
-                    <img class="card-image" src="assets/img/portfolio/sav-e.png" alt="SAV-E" />
-                    <div class="card-overlay">
-                        <div class="card-category">Banking & Finance</div>
-                        <h3 class="card-title">SAV-E Mobile Banking</h3>
-                    </div>
-                </div>
-            </div>
-
             <!-- Smartnet -->
             <div class="portfolio-card-item"
-                data-description="Free Internet Portal providing access to social networks and services without data charges. Empowering connectivity for millions."
-                data-tech-stack="Android, Network Optimization, VPN, Social Integration" data-bg-color="#0f172a">
+                data-description="An innovative 'Free Internet' platform providing zero-rated access to social media and essential services. Utilized advanced VPN tunneling and background data management to safeguard users from unwanted charges. Featured a proprietary 'Net.Safe' technology, ensuring a worry-free online experience for prepaid subscribers."
+                data-tech-stack="Android, VPNService, Traffic Management, Socket.IO, Background Services"
+                data-bg-color="#0f172a">
                 <div class="card-image-wrapper">
-                    <img class="card-image" src="assets/img/portfolio/smartnet.jpg" alt="Smartnet" />
+                    <img class="card-image" src="assets/img/portfolio/smartnetCard.png" alt="Smartnet" /> <img
+                        class="card-image-hover" src="assets/img/portfolio/smartnetHoverCard.png"
+                        alt="Smartnet Hover" />
                     <div class="card-overlay">
                         <div class="card-category">Free Internet</div>
                         <h3 class="card-title">Smartnet</h3>
@@ -65,10 +59,12 @@
 
             <!-- Freenet -->
             <div class="portfolio-card-item"
-                data-description="Free access to partner apps and sites including Facebook, Twitter, Instagram, and more. Zero-rated data for essential services."
-                data-tech-stack="Android, Network APIs, Partner Integration, Data Management" data-bg-color="#111827">
+                data-description="A gamified free internet platform that rewards users with points and data packages for completing missions. Provided rewards-based access to top apps including Facebook and Twitter. Implemented sophisticated partner API integrations and data-saving mechanisms to bridge the digital divide."
+                data-tech-stack="Android, Gamification, Rewards Engine, VPN, RESTful APIs, Analytics"
+                data-bg-color="#111827">
                 <div class="card-image-wrapper">
-                    <img class="card-image" src="assets/img/portfolio/freenet.png" alt="Freenet" />
+                    <img class="card-image" src="assets/img/portfolio/freenetCard.png" alt="Freenet" /> <img
+                        class="card-image-hover" src="assets/img/portfolio/freenetHoverCard.png" alt="Freenet Hover" />
                     <div class="card-overlay">
                         <div class="card-category">Partner Access</div>
                         <h3 class="card-title">Freenet</h3>
@@ -78,10 +74,12 @@
 
             <!-- Chikka -->
             <div class="portfolio-card-item"
-                data-description="Free messaging app with voice messages, group chat, and cross-platform synchronization. Connecting communities seamlessly."
-                data-tech-stack="Android, Real-time Messaging, WebSockets, Cloud Sync" data-bg-color="#1e1b4b">
+                data-description="The pioneering cross-platform messenger that successfully bridged web and SMS. Allowed users to send free text messages to any mobile number from the app. Features included real-time group chat, message synchronization across devices, and an optimized protocol for handling communications in low-bandwidth network conditions."
+                data-tech-stack="Android, XMPP, WebSockets, Real-time Sync, SQLite, Push Notifications"
+                data-bg-color="#1e1b4b">
                 <div class="card-image-wrapper">
-                    <img class="card-image" src="assets/img/portfolio/chikka.png" alt="Chikka" />
+                    <img class="card-image" src="assets/img/portfolio/chikkaCard.png" alt="Chikka" /> <img
+                        class="card-image-hover" src="assets/img/portfolio/chikkaHoverCard.png" alt="Chikka Hover" />
                     <div class="card-overlay">
                         <div class="card-category">Messaging</div>
                         <h3 class="card-title">Chikka</h3>
@@ -89,83 +87,113 @@
                 </div>
             </div>
 
-            <!-- PowerApp -->
+            <!-- BGE -->
             <div class="portfolio-card-item"
-                data-description="Award-winning mobile utility services app, recognized as Most Innovative at Asia Communication Awards. Streamlining utility management."
-                data-tech-stack="Android, Payment Integration, Utility APIs, Material Design" data-bg-color="#020617">
+                data-description="Free mobile self-service hub for BGE (Exelon) customers to manage energy accounts, pay bills, track usage, report outages, and view restoration maps. Features AutoPay management, PeakRewards device control, and customizable alerts for seamless energy management on the go."
+                data-tech-stack="Android, Account Management, Payment Integration, Real-time Maps, Push Notifications"
+                data-bg-color="#1a2332">
                 <div class="card-image-wrapper">
-                    <img class="card-image" src="assets/img/portfolio/powerapp.png" alt="PowerApp" />
+                    <img class="card-image" src="assets/img/portfolio/bgeCard.png" alt="BGE" /> <img
+                        class="card-image-hover" src="assets/img/portfolio/bgeHoverCard.png" alt="BGE Hover" />
                     <div class="card-overlay">
-                        <div class="card-category">Utility Services</div>
-                        <h3 class="card-title">PowerApp</h3>
+                        <div class="card-category">Energy & Utilities</div>
+                        <h3 class="card-title">BGE by Exelon</h3>
                     </div>
                 </div>
             </div>
 
-            <!-- SafeZone -->
+            <!-- ComEd -->
             <div class="portfolio-card-item"
-                data-description="Protected free internet access to lifestyle needs including social networks, shopping, news, and more. Safe browsing for everyone."
-                data-tech-stack="Android, Security, Content Filtering, Network Management" data-bg-color="#0c0a09">
+                data-description="Free utility management app for ComEd (Exelon) customers in Northern Illinois. Manage accounts, pay bills, report and track outages with real-time maps, and monitor hourly energy usage. Features biometric sign-in, Budget Billing settings, bill forecasts, and customizable usage alerts for convenient on-the-go access."
+                data-tech-stack="Android, Biometric Authentication, Real-time Data, Payment Integration, Usage Analytics"
+                data-bg-color="#2a1a32">
                 <div class="card-image-wrapper">
-                    <img class="card-image" src="assets/img/portfolio/safezone.jpg" alt="SafeZone" />
+                    <img class="card-image" src="assets/img/portfolio/comedCard.png" alt="ComEd" /> <img
+                        class="card-image-hover" src="assets/img/portfolio/comedHoverCard.png" alt="ComEd Hover" />
                     <div class="card-overlay">
-                        <div class="card-category">Free Internet Zone</div>
-                        <h3 class="card-title">SafeZone</h3>
+                        <div class="card-category">Energy & Utilities</div>
+                        <h3 class="card-title">ComEd by Exelon</h3>
                     </div>
                 </div>
             </div>
 
-            <!-- ParkPlus -->
+            <!-- PECO -->
             <div class="portfolio-card-item"
-                data-description="Hassle-free parking solution providing faster and more convenient parking experiences. Smart parking made simple."
-                data-tech-stack="Android, GPS, Payment Gateway, Real-time Updates" data-bg-color="#1c1917">
+                data-description="Free secure mobile hub for PECO (Exelon) electric and natural gas customers. Manage accounts, pay bills, report and track outages with real-time maps, and monitor energy consumption. Features biometric sign-in, AutoPay and Budget Billing settings, multi-account management, and Apple Watch compatibility for seamless utility service access."
+                data-tech-stack="Android, iOS, Biometric Security, Apple Watch, Real-time Maps, Multi-Account Support"
+                data-bg-color="#1a3232">
                 <div class="card-image-wrapper">
-                    <img class="card-image" src="assets/img/portfolio/parkplus.jpg" alt="ParkPlus" />
+                    <img class="card-image" src="assets/img/portfolio/pecoCard.png" alt="PECO" /> <img
+                        class="card-image-hover" src="assets/img/portfolio/pecoHoverCard.png" alt="PECO Hover" />
                     <div class="card-overlay">
-                        <div class="card-category">Smart Parking</div>
-                        <h3 class="card-title">ParkPlus</h3>
+                        <div class="card-category">Energy & Utilities</div>
+                        <h3 class="card-title">PECO by Exelon</h3>
                     </div>
                 </div>
             </div>
 
-            <!-- Utility Apps -->
+            <!-- mystc -->
             <div class="portfolio-card-item"
-                data-description="Mobile apps for utility company providing seamless access to services and account management. Simplifying utility interactions."
-                data-tech-stack="Android, Account Management, Billing APIs, Notifications" data-bg-color="#0a0a0a">
+                data-description="Comprehensive telecom super-app for stc customers in Saudi Arabia. Manage all services, order new numbers with delivery, shop smart devices and vouchers, transfer numbers from other operators, pay bills, recharge prepaid, manage packages, subscribe to entertainment services, and get 24/7 instant support. Features number auctions, device exchange, gifting, roaming packages, and carrier billing integration."
+                data-tech-stack="Android, E-commerce, Payment Gateway, Live Chat, Carrier Billing, Multi-Service Platform"
+                data-bg-color="#1a1a2e">
                 <div class="card-image-wrapper">
-                    <img class="card-image" src="assets/img/portfolio/utility-apps.png" alt="Utility Apps" />
+                    <img class="card-image" src="assets/img/portfolio/stcCard.png" alt="mystc" /> <img
+                        class="card-image-hover" src="assets/img/portfolio/stcHoverCard.png" alt="mystc Hover" />
                     <div class="card-overlay">
-                        <div class="card-category">Utility Services</div>
-                        <h3 class="card-title">Utility Mobile Apps</h3>
+                        <div class="card-category">Telecom & Services</div>
+                        <h3 class="card-title">mystc</h3>
                     </div>
                 </div>
             </div>
 
-            <!-- Submarine -->
+            <!-- Overstock -->
             <div class="portfolio-card-item"
-                data-description="Experimental underwater exploration interface with real-time telemetry and 3D visualization. Pushing the boundaries of mobile UX."
-                data-tech-stack="Android, 3D Graphics, Real-time Data, Custom Views" data-bg-color="#080a0f">
+                data-description="Home furnishings and lifestyle e-commerce app offering furniture, décor, jewelry, mattresses, bedding, and designer goods at discounted prices. Features easy browsing of thousands of products, exclusive app-only discounts, first-to-know notifications, quick secure checkout, and seamless cart synchronization between site and app for effortless shopping."
+                data-tech-stack="Android, E-commerce, Push Notifications, Secure Payments, Cart Sync"
+                data-bg-color="#2e1a1a">
                 <div class="card-image-wrapper">
-                    <img class="card-image" src="assets/img/portfolio/submarine.png" alt="Submarine" />
+                    <img class="card-image" src="assets/img/portfolio/overstockCard.png" alt="Overstock" /> <img
+                        class="card-image-hover" src="assets/img/portfolio/overstockHoverCard.png"
+                        alt="Overstock Hover" />
                     <div class="card-overlay">
-                        <div class="card-category">Experimental</div>
-                        <h3 class="card-title">Submarine</h3>
+                        <div class="card-category">E-commerce & Retail</div>
+                        <h3 class="card-title">Overstock</h3>
                     </div>
                 </div>
             </div>
 
-            <!-- Safe Box -->
+            <!-- Mula Mobile -->
             <div class="portfolio-card-item"
-                data-description="Secure digital vault application with high-level encryption for storing sensitive information. Your data, protected."
-                data-tech-stack="Android, Encryption, Biometrics, Secure Storage, Kotlin" data-bg-color="#0f172a">
+                data-description="Free mobile business management app for selling digital goods like airtime and electricity. Functions as a complete till system with inventory management, stock ordering, sales tracking, and profit monitoring. Supports additional payment services including DStv channels. Designed to help businesses and individuals grow through effective mobile commerce."
+                data-tech-stack="Android, POS System, Inventory Management, Payment Integration, Sales Analytics"
+                data-bg-color="#1a2e1a">
                 <div class="card-image-wrapper">
-                    <img class="card-image" src="assets/img/portfolio/safe.png" alt="Safe Box" />
+                    <img class="card-image" src="assets/img/portfolio/mulaCard.png" alt="Mula Mobile" /> <img
+                        class="card-image-hover" src="assets/img/portfolio/mulaHoverCard.png" alt="Mula Mobile Hover" />
                     <div class="card-overlay">
-                        <div class="card-category">Security</div>
-                        <h3 class="card-title">Safe Box</h3>
+                        <div class="card-category">Business & Commerce</div>
+                        <h3 class="card-title">Mula Mobile</h3>
                     </div>
                 </div>
             </div>
+
+            <!-- Bed Bath & Beyond -->
+            <div class="portfolio-card-item"
+                data-description="Streamlined home goods shopping app for furniture and decor. Features app-exclusive deals and discounts, wish list bookmarking with social sharing, instant price drop alerts, centralized coupon storage, quick checkout with saved credentials, and comprehensive order tracking. Shop thousands of products for every room, every home, and every budget."
+                data-tech-stack="Android, E-commerce, Price Alerts, Wish Lists, Order Tracking, Coupon Management"
+                data-bg-color="#1a2a32">
+                <div class="card-image-wrapper">
+                    <img class="card-image" src="assets/img/portfolio/BBBCard.png" alt="Bed Bath & Beyond" /> <img
+                        class="card-image-hover" src="assets/img/portfolio/BBBHoverCard.png"
+                        alt="Bed Bath & Beyond Hover" />
+                    <div class="card-overlay">
+                        <div class="card-category">Home & Retail</div>
+                        <h3 class="card-title">Bed Bath & Beyond</h3>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

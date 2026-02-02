@@ -30,7 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     Promise.all(loadPromises).then(() => {
-        // Dispatch custom event when all sections are loaded
-        document.dispatchEvent(new CustomEvent('sectionsLoaded'));
+        // Initialize content loader to populate sections from JSON
+        if (window.contentLoader) {
+            contentLoader.initAll().then(() => {
+                // Dispatch custom event when all sections are loaded and populated
+                document.dispatchEvent(new CustomEvent('sectionsLoaded'));
+            });
+        } else {
+            // Fallback if content loader is not available
+            document.dispatchEvent(new CustomEvent('sectionsLoaded'));
+        }
     });
 });

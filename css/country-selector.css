@@ -8,17 +8,20 @@
     display: flex;
     gap: 0;
     position: relative;
-    background: #fff;
-    border: 1px solid #ced4da;
+    background: var(--slate-900);
+    border: 1px solid var(--slate-700);
     border-radius: 0.375rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    /* Matches Bootstrap default for form-control */
+    transition: all 0.2s var(--ease-expo-out);
+    overflow: hidden;
 }
 
 .phone-input-group:focus-within,
 .custom-input-group:focus-within {
-    border-color: #86b7fe;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: var(--primary-600);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
     z-index: 10;
+    background-color: var(--slate-900);
 }
 
 .country-selector {
@@ -30,16 +33,22 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0 0.75rem;
+    padding: 0 1rem;
+    /* Matches p-3 horizontal padding */
     background: transparent;
     border: none;
-    border-right: 1px solid #ced4da;
-    border-radius: 0.375rem 0 0 0.375rem;
+    border-right: 1px solid var(--slate-700);
     cursor: pointer;
-    height: 58px;
+    height: 60px;
+    /* Adjusted to match p-3 input height */
     min-width: 100px;
     font-size: 1rem;
-    color: #212529;
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.country-selector-btn:hover {
+    background-color: var(--slate-800);
 }
 
 .country-selector-btn:focus {
@@ -56,13 +65,13 @@
 
 .country-code {
     font-weight: 400;
-    color: #212529;
+    color: white;
     font-size: 1rem;
 }
 
 .country-selector-btn .fa-chevron-down {
     font-size: 0.7rem;
-    color: #6c757d;
+    color: var(--slate-400);
     transition: transform 0.2s ease;
     margin-left: auto;
 }
@@ -71,26 +80,19 @@
 .custom-input {
     flex: 1;
     border: none !important;
-    border-radius: 0.375rem !important;
-    padding: 1.125rem 0.75rem !important;
+    padding: 1rem !important;
+    /* Matches p-3 */
     font-size: 1rem;
-    min-height: 58px;
+    height: 60px !important;
     background: transparent !important;
     box-shadow: none !important;
+    color: white !important;
 }
 
 textarea.custom-input {
-    padding-top: 1.25rem !important;
+    padding-top: 1rem !important;
     padding-bottom: 1rem !important;
-}
-
-input.phone-number-input,
-input.custom-input {
-    height: 58px !important;
-}
-
-.phone-number-input {
-    border-radius: 0 0.375rem 0.375rem 0 !important;
+    min-height: 120px;
 }
 
 .phone-number-input:focus,
@@ -109,7 +111,7 @@ input.custom-input {
     border: 1px solid transparent;
     transform-origin: 0 0;
     transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
-    color: rgba(33, 37, 41, 0.65);
+    color: var(--slate-400);
     font-size: 1rem;
     z-index: 5;
     border-radius: 0.375rem;
@@ -127,7 +129,7 @@ input.custom-input {
 .custom-input:not(:placeholder-shown)~.floating-label {
     opacity: 1;
     transform: scale(0.85) translateY(-0.75rem) translateX(0.5rem);
-    background-color: #fff;
+    background-color: var(--slate-900);
     height: auto;
     padding: 0 0.25rem;
 }
@@ -140,7 +142,7 @@ input.custom-input {
 
 .phone-number-input:focus::placeholder,
 .custom-input:focus::placeholder {
-    color: #6c757d;
+    color: var(--slate-500);
 }
 
 /* Country Dropdown */
@@ -151,14 +153,14 @@ input.custom-input {
     width: 320px;
     max-height: 0;
     overflow: hidden;
-    background: #fff;
+    background: var(--slate-800);
     border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.4);
     z-index: 1000;
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.2s ease;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--slate-700);
 }
 
 .country-dropdown.show {
@@ -171,8 +173,8 @@ input.custom-input {
 .country-search {
     position: relative;
     padding: 0.75rem 1rem;
-    border-bottom: 1px solid #dee2e6;
-    background: #f8f9fa;
+    border-bottom: 1px solid var(--slate-700);
+    background: var(--slate-900);
 }
 
 /* Target both the original <i> and the Font Awesome generated <svg> */
@@ -182,7 +184,7 @@ input.custom-input {
     left: 1.75rem !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    color: #adb5bd !important;
+    color: var(--slate-500) !important;
     font-size: 0.875rem !important;
     z-index: 5 !important;
     margin: 0 !important;
@@ -191,17 +193,18 @@ input.custom-input {
 .country-search input {
     width: 100%;
     padding: 0.5rem 0.75rem 0.5rem 2.25rem;
-    border: 1px solid #ced4da;
+    border: 1px solid var(--slate-700);
     border-radius: 0.375rem;
     font-size: 0.875rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    background: #fff;
+    background: var(--slate-800);
+    color: white;
 }
 
 .country-search input:focus {
     outline: none;
-    border-color: #86b7fe;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: var(--primary-600);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
 .country-list {
@@ -215,16 +218,16 @@ input.custom-input {
 }
 
 .country-list::-webkit-scrollbar-track {
-    background: #f1f3f5;
+    background: var(--slate-900);
 }
 
 .country-list::-webkit-scrollbar-thumb {
-    background: #adb5bd;
+    background: var(--slate-700);
     border-radius: 4px;
 }
 
 .country-list::-webkit-scrollbar-thumb:hover {
-    background: #868e96;
+    background: var(--slate-600);
 }
 
 .country-item {
@@ -237,11 +240,11 @@ input.custom-input {
 }
 
 .country-item:hover {
-    background: #f8f9fa;
+    background: var(--slate-700);
 }
 
 .country-item:active {
-    background: #e9ecef;
+    background: var(--slate-600);
 }
 
 .country-item .country-flag {
@@ -252,12 +255,12 @@ input.custom-input {
 .country-name {
     flex: 1;
     font-size: 0.9rem;
-    color: #212529;
+    color: white;
 }
 
 .country-code-text {
     font-size: 0.85rem;
-    color: #6c757d;
+    color: var(--slate-400);
     font-weight: 500;
 }
 
