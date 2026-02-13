@@ -1,77 +1,23 @@
 <!-- Expertise Section-->
 <section class="page-section bg-slate-900" id="expertise">
-    <div class="container">
+
+    <div class="container section-content">
         <!-- Section Heading-->
         <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold mb-3 text-white">Core Expertise</h2>
-            <p class="lead text-slate-300 mx-auto" style="max-width: 700px;">
-                Specializing in high-performance Android development with a focus on scalability, maintainability, and
-                exceptional user experience.
-            </p>
+            <h2 id="skills-heading" class="display-5 fw-bold mb-3 text-white premium-heading"></h2>
+            <p id="skills-subheading" class="lead text-slate-300 mx-auto" style="max-width: 700px;"></p>
         </div>
 
-        <div class="row g-4 justify-content-center reveal-staggered">
-            <!-- Pillar 1: Architecture -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm p-4 hover-lift bg-slate-800 border border-slate-700">
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="fas fa-layer-group fa-lg text-primary-600 me-3"></i>
-                        <h3 class="h4 fw-bold mb-0 text-white">Architecture & Scalability</h3>
-                    </div>
-                    <p class="text-slate-400 mb-0">
-                        Building robust foundations using Clean Architecture, MVVM, and MVI patterns to ensure long-term
-                        maintainability and testability.
-                    </p>
-                </div>
-            </div>
-            <!-- Pillar 2: UI/UX -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm p-4 hover-lift bg-slate-800 border border-slate-700">
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="fas fa-paint-brush fa-lg text-info me-3"></i>
-                        <h3 class="h4 fw-bold mb-0 text-white">Modern UI/UX</h3>
-                    </div>
-                    <p class="text-slate-400 mb-0">
-                        Crafting fluid, accessible, and modern interfaces with Jetpack Compose, ensuring a premium feel
-                        across all device sizes.
-                    </p>
-                </div>
-            </div>
-            <!-- Pillar 3: Performance -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm p-4 hover-lift bg-slate-800 border border-slate-700">
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="fas fa-bolt fa-lg text-success me-3"></i>
-                        <h3 class="h4 fw-bold mb-0 text-white">Performance & Optimization</h3>
-                    </div>
-                    <p class="text-slate-400 mb-0">
-                        Ensuring lightning-fast load times and smooth interactions through Coroutines, Flows, and
-                        efficient data handling.
-                    </p>
-                </div>
-            </div>
+        <div id="skills-pillars" class="row g-4 justify-content-center reveal-staggered">
+            <!-- Dynamic Pillars will be loaded here -->
         </div>
 
         <!-- Tech Stack Badges -->
         <div class="mt-5 pt-5 text-center">
-            <p class="small text-uppercase tracking-wider text-slate-500 mb-4">Advanced Tech Stack</p>
-            <div class="d-flex flex-wrap justify-content-center gap-3">
-                <span
-                    class="badge bg-slate-800 text-slate-300 px-3 py-2 rounded-2 border border-slate-700">Kotlin</span>
-                <span class="badge bg-slate-800 text-slate-300 px-3 py-2 rounded-2 border border-slate-700">Jetpack
-                    Compose</span>
-                <span class="badge bg-slate-800 text-slate-300 px-3 py-2 rounded-2 border border-slate-700">Coroutines &
-                    Flows</span>
-                <span class="badge bg-slate-800 text-slate-300 px-3 py-2 rounded-2 border border-slate-700">Hilt /
-                    Dagger</span>
-                <span class="badge bg-slate-800 text-slate-300 px-3 py-2 rounded-2 border border-slate-700">Retrofit /
-                    OkHttp</span>
-                <span class="badge bg-slate-800 text-slate-300 px-3 py-2 rounded-2 border border-slate-700">Room
-                    Database</span>
-                <span class="badge bg-slate-800 text-slate-300 px-3 py-2 rounded-2 border border-slate-700">Unit & UI
-                    Testing</span>
-                <span class="badge bg-slate-800 text-slate-300 px-3 py-2 rounded-2 border border-slate-700">CI/CD
-                    Pipelines</span>
+            <p id="skills-tech-label" class="small text-uppercase tracking-wider text-slate-500 mb-4">Advanced Tech
+                Stack</p>
+            <div id="skills-tech-list" class="d-flex flex-wrap justify-content-center gap-3">
+                <!-- Dynamic Tech Stack will be loaded here -->
             </div>
         </div>
     </div>

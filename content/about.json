@@ -13,13 +13,27 @@
             "label": "Years Experience"
         },
         {
-            "value": 50,
+            "value": 20,
             "suffix": "+",
             "label": "Apps Shipped"
         }
     ],
-    "testimonial": {
-        "quote": "Harold's expertise in Android architecture was pivotal in modernizing our mobile presence. His focus on performance and scalability is world-class.",
-        "author": "Engineering Lead, Philippine Airlines"
-    }
+    "testimonials": [
+        {
+            "quote": "Harold's expertise in Android architecture was pivotal in modernizing our mobile presence. His focus on performance and scalability is world-class.",
+            "author": "Engineering Lead, Philippine Airlines"
+        },
+        {
+            "quote": "A true professional who understands both the technical and business sides of app development. The results delivered exceeded our expectations.",
+            "author": "Product Manager, TechFlow"
+        },
+        {
+            "quote": "Incredible attention to detail and a proactive problem-solver. Harold transformed our legacy codebase into a modern, high-performing application.",
+            "author": "CTO, InnovateX"
+        },
+        {
+            "quote": "Test eto",
+            "author": "Irish Panganiban"
+        }
+    ]
 }

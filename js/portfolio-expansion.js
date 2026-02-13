@@ -2,24 +2,31 @@
 
 class PortfolioExpansion {
     constructor() {
+        if (window.portfolioExpansionInstance) {
+            return window.portfolioExpansionInstance;
+        }
+
         this.scrollContainer = document.querySelector('.portfolio-horizontal-scroll');
-        this.cards = document.querySelectorAll('.portfolio-card-item');
+        this.cards = [];
         this.expandedView = null;
         this.isExpanded = false;
-        this.closeTimeout = null; // Track the close animation timeout
+        this.closeTimeout = null;
 
         // Auto-scroll properties
-        this.autoScrollSpeed = 0.5; // pixels per frame
+        this.autoScrollSpeed = 0.5;
         this.autoScrollAnimation = null;
         this.isHovering = false;
         this.isPaused = false;
+        this.hasAnimated = false;
 
         this.init();
+        window.portfolioExpansionInstance = this;
     }
 
     init() {
         this.createExpandedViewContainer();
-        this.attachEventListeners();
+        this.refreshCards();
+        this.attachGlobalListeners();
 
         // Initial visual update
         this.updateVisuals();
@@ -31,7 +38,35 @@ class PortfolioExpansion {
         this.startAutoScroll();
     }
 
+    refreshCards() {
+        this.scrollContainer = document.querySelector('.portfolio-horizontal-scroll');
+        this.cards = document.querySelectorAll('.portfolio-card-item');
+
+        // Ensure new cards are interactive if we've already animated
+        if (this.hasAnimated) {
+            this.cards.forEach(card => {
+                if (!card.classList.contains('animate-in')) {
+                    card.classList.add('animate-in');
+                    card.style.pointerEvents = 'auto';
+                }
+            });
+        }
+
+        // Re-attach click listeners to all cards
+        this.cards.forEach(card => {
+            // Remove old listener if exists (by cloning or checking)
+            // But since cards are usually replaced, we just add new ones
+            card.removeEventListener('click', card._expandHandler);
+            card._expandHandler = () => this.expandCard(card);
+            card.addEventListener('click', card._expandHandler);
+        });
+    }
+
     createExpandedViewContainer() {
+        if (document.querySelector('.portfolio-expanded-view')) {
+            this.expandedView = document.querySelector('.portfolio-expanded-view');
+            return;
+        }
         const container = document.createElement('div');
         container.className = 'portfolio-expanded-view';
         container.innerHTML = `
@@ -59,15 +94,12 @@ class PortfolioExpansion {
         this.expandedView = container;
     }
 
-    attachEventListeners() {
-        // Scroll Event for Visuals (Parallax/Scaling)
+    attachGlobalListeners() {
+        if (!this.scrollContainer) return;
+
+        // Scroll Event for Visuals
         this.scrollContainer.addEventListener('scroll', () => {
             requestAnimationFrame(() => this.updateVisuals());
-        });
-
-        // Card Click - Simple and Reliable
-        this.cards.forEach(card => {
-            card.addEventListener('click', () => this.expandCard(card));
         });
 
         // Close listeners
@@ -230,6 +262,7 @@ class PortfolioExpansion {
                         }, 200); // Reduced delay for faster response
 
                         hasAnimated = true;
+                        this.hasAnimated = true;
                     } else if (!isScrollingDown && hasAnimated) {
                         // When scrolling up from below, keep everything visible
                         const container = entry.target.querySelector('.container');
@@ -310,18 +343,23 @@ class PortfolioExpansion {
     }
 }
 
-// Initialize
+// Initialize or Refresh Portfolio
 const initPortfolio = () => {
     if (document.querySelector('.portfolio-horizontal-scroll')) {
-        // Check if already initialized to prevent duplicates
         if (!window.portfolioExpansionInstance) {
             window.portfolioExpansionInstance = new PortfolioExpansion();
+        } else {
+            window.portfolioExpansionInstance.refreshCards();
         }
     }
 };
 
+// Export the function globally for content-loader.js
+window.initializePortfolioExpansion = initPortfolio;
+
 // Listen for the custom event from pages.js
 document.addEventListener('sectionsLoaded', initPortfolio);
 
-// Also try on DOMContentLoaded in case content is already there (e.g. static build)
+// Also try on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', initPortfolio);
+

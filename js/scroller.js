@@ -7,7 +7,7 @@
     let animationId = null;
     let isPaused = false;
     let direction = 1; // 1 for right, -1 for left
-    const scrollSpeed = 0.5; // Pixels per frame
+    const scrollSpeed = 0.1; // Pixels per frame
 
     function initScroller(scroller) {
         if (scroller.dataset.initialized) return;
@@ -83,9 +83,9 @@
         if (!isDown || !activeScroller) return;
 
         const x = e.pageX - activeScroller.offsetLeft;
-        const walk = (x - startX) * 2; // Scroll speed
+        const walk = (x - startX) * 0.1; // Scroll speed
 
-        if (Math.abs(walk) > 5) {
+        if (Math.abs(walk) > 0.1) {
             isDragging = true;
         }
 

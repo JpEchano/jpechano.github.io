@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageFiles = [
         { file: 'header.html', containerId: 'header-container' },
         { file: 'masthead.html', containerId: 'masthead-container' },
+        { file: 'trusted-by.html', containerId: 'trusted-by-container' },
         { file: 'about.html', containerId: 'about-container' },
         { file: 'experience.html', containerId: 'process-container' },
         { file: 'skills.html', containerId: 'expertise-container' },

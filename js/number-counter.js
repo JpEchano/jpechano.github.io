@@ -114,6 +114,12 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(initializeCounters, 1500);
 });
 
+// Re-initialize when all sections are loaded (emitted by pages.js)
+document.addEventListener('sectionsLoaded', () => {
+    // Small delay to ensure DOM is painted
+    setTimeout(initializeCounters, 100);
+});
+
 // Watch for dynamic content changes (debounced to prevent excessive calls)
 let initTimeout = null;
 const contentObserver = new MutationObserver(() => {

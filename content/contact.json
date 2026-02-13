@@ -9,12 +9,17 @@
         {
             "platform": "GitHub",
             "icon": "fab fa-github",
-            "url": "https://github.com/JpEchano"
+            "url": "https://github.com/haroldcalayan"
         },
         {
             "platform": "LinkedIn",
             "icon": "fab fa-linkedin",
             "url": "https://www.linkedin.com/in/haroldcalayan/"
+        },
+        {
+            "platform": "Facebook",
+            "icon": "fab fa-facebook",
+            "url": "https://www.facebook.com/haroldcalayan"
         }
     ],
     "formFields": [
